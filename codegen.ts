@@ -38,7 +38,7 @@ const main = async () => {
           (await util.promisify(readdir)("./apps"))
           .filter((dir) => fs.lstatSync(`./apps/${dir}`).isDirectory() && fs.existsSync(`./apps/${dir}/index.ts`) )
           .map((dir) => {
-              return `import ${dir} from './apps/${dir}'`;
+              return `import ${dir} from './apps/${dir}';`;
             })
             .join("\n")
         )
@@ -47,7 +47,7 @@ const main = async () => {
           (await util.promisify(readdir)("./apps"))
             .filter((dir) => fs.lstatSync(`./apps/${dir}`).isDirectory() && fs.existsSync(`./apps/${dir}/index.ts`) )
             .map((dir) => {
-              return `app.use("/${dir}", ${dir})`;
+              return `app.use("/${dir}", ${dir});`;
             })
             .join("\n")
         )

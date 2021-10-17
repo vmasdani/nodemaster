@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ts-node codegen.ts && ts-node index.ts",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "ts-node": "ts-node"
   },
   "author": "",
   "license": "ISC",
